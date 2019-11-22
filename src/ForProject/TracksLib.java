@@ -1,7 +1,6 @@
 package ForProject;
 
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.LinkedList;
 
 public class TracksLib implements Serializable {
@@ -24,11 +23,11 @@ public class TracksLib implements Serializable {
     }
     public LinkedList<Track> getTasksList(){return TracksList;}
     //создание
-    public void createTask(Track track){
+    public void createTrack(Track track) {
         TracksList.add(track);
     }
     //удаление
-    public void deleteTask(int num){
+    public void deleteTrack(int num) {
         TracksList.remove(num);
     }
     //изменение
@@ -44,17 +43,6 @@ public class TracksLib implements Serializable {
         return array;
     }
     //просмотр
-    public String toString(){
-        StringBuffer str=new StringBuffer();
-        int i=0;
-        if(TracksList!=null) {
-            for (Track element : TracksList) {
-                str.append(i + ".\t")
-                        .append(element.toString() + "\n");
-                i++;
-            }
-        }
-        return str.toString();
-    }
+
 
 }

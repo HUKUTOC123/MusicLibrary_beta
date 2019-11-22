@@ -1,7 +1,5 @@
 package ForProject;
 
-import ForProject.Recordlen;
-
 public class Track {
 
 String Track_name;
@@ -51,6 +49,4 @@ public void  setPerformer_Name(String Performer_Name){this.Performer_Name=Perfor
     }
 
 
-    public static class Controller {
-    }
 }

@@ -1,9 +1,7 @@
 import ForProject.Recordlen;
 import ForProject.Track;
-import ForProject.TracksLib;
 
 import java.io.*;
-import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -33,9 +31,9 @@ public class Controller {
         return track;
     }
 
-    public static void serialisationTrackLib(OutputStream out, LinkedList<Track> linkedListTask) throws IOException {
+    public static void serialisationTrackLib(OutputStream out, LinkedList<Track> TracksList) throws IOException {
         ObjectOutputStream objectOut = new ObjectOutputStream(out);
-        objectOut.writeObject(linkedListTask);
+        objectOut.writeObject(TracksList);
     }
 
     public static LinkedList<Track> deserialisationTrackLib(InputStream in) throws IOException, ClassNotFoundException {

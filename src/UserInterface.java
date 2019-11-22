@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class UserInterface {
     public  void mainMenu() {
         LinkedList<Track> TrackLib =new LinkedList<Track>();
-        TrackLib =downlandTaskLog(TrackLib);
+        TrackLib = downloadTrackLib(TrackLib);
         TracksLib library = new TracksLib("Музыкальня библиотека",TrackLib);
         Scanner in = new Scanner(System.in);
         boolean exit=false;
@@ -26,11 +26,9 @@ public class UserInterface {
             switch (in.nextLine()) {
                 case "1":cls();
                     createMenu(library);
-                    // exitMainMenu(in);
                     break;
                 case "2":cls();
                     deleteMenu(library);
-                    // exitMainMenu(in);
                     break;
                 case "3":cls();
                     setMenu(library);
@@ -68,7 +66,7 @@ public class UserInterface {
                 cls();
                 while(!exitCreateMenu) {
                     try {
-                        library.createTask(Controller.inputTrack(in));
+                        library.createTrack(Controller.inputTrack(in));
                         exitCreateMenu=true;
                     }catch (Exception e)
                     {
@@ -102,7 +100,7 @@ public class UserInterface {
                         System.out.println(manager);
                         System.out.println("Введите индекс трека который нужно удалить ");
                         int num=in.nextInt();
-                        manager.deleteTask(num);
+                        manager.deleteTrack(num);
                         cls();
                         System.out.println("Элемент успешно удален\n " +
                                 "------------------------------------------");
@@ -172,7 +170,8 @@ public class UserInterface {
                 break;
         }
     }
-    private LinkedList<Track> downlandTaskLog(LinkedList<Track> TrackLib){
+
+    private LinkedList<Track> downloadTrackLib(LinkedList<Track> TrackLib) {
         try(FileInputStream fileInputStream=new FileInputStream("serialisation1")) {
             TrackLib =Controller.deserialisationTrackLib(fileInputStream);
         }
