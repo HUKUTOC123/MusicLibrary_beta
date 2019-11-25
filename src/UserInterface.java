@@ -40,7 +40,7 @@ public class UserInterface {
                     break;
                 case "5":
                     try(FileOutputStream fileOutputStream=new FileOutputStream("serialisation1")) {
-                        Controller.serialisationTrackLib(fileOutputStream,library.getTasksList());
+                        Controller.serialisationTrackLib(fileOutputStream, library.getTracksList());
                     }catch (IOException e){}
                     exit = true;
                     break;
@@ -138,7 +138,7 @@ public class UserInterface {
                         int num = in.nextInt();
                         Scanner inn = new Scanner(System.in);
                         System.out.println("\nЗаполните данные о треке по-новому :");
-                        manager.setTask(num, Controller.inputTrack(inn));
+                        manager.setTrack(num, Controller.inputTrack(inn));
                         cls();
                         System.out.println("Элемент успешно изменен \n" +
                                 "------------------------------------------");

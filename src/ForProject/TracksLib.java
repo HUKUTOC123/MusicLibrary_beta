@@ -7,9 +7,10 @@ public class TracksLib implements Serializable {
     private String name;
     private LinkedList<Track> TracksList=new LinkedList<Track>();
     public  TracksLib(String name){ this.name=name; }
-    public TracksLib(String name, LinkedList<Track> tasksList){
+
+    public TracksLib(String name, LinkedList<Track> TracksList) {
         this.name=name;
-        this.TracksList=tasksList;
+        this.TracksList = TracksList;
     }
     public  TracksLib(){}
     public String getName(){return name;}
@@ -21,7 +22,10 @@ public class TracksLib implements Serializable {
         }
         return array;
     }
-    public LinkedList<Track> getTasksList(){return TracksList;}
+
+    public LinkedList<Track> getTracksList() {
+        return TracksList;
+    }
     //создание
     public void createTrack(Track track) {
         TracksList.add(track);
@@ -31,11 +35,11 @@ public class TracksLib implements Serializable {
         TracksList.remove(num);
     }
     //изменение
-    public void setTask(int index,Track tracks_list){
+    public void setTrack(int index, Track tracks_list) {
         TracksList.set(index,tracks_list);
     }
     //представление чеез массив
-    public Track[] getTaskLog(){
+    public Track[] getTrackLib() {
         Track[] array=new Track[TracksList.size()];
         for(int i=0;i<array.length; i++){
             array[i]=TracksList.get(i);
@@ -43,6 +47,18 @@ public class TracksLib implements Serializable {
         return array;
     }
     //просмотр
+    public String toString() {
+        StringBuffer str = new StringBuffer();
+        int i = 0;
+        if (TracksList != null) {
+            for (Track element : TracksList) {
+                str.append(i + ".\t")
+                        .append(element.toString() + "\n");
+                i++;
+            }
+        }
+        return str.toString();
+    }
 
 
 }
