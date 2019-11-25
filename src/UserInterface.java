@@ -11,7 +11,7 @@ public class UserInterface {
     public  void mainMenu() {
         LinkedList<Track> TrackLib =new LinkedList<Track>();
         TrackLib = downloadTrackLib(TrackLib);
-        TracksLib library = new TracksLib("Музыкальня библиотека",TrackLib);
+        TracksLib library = new TracksLib("Музыкальня библиотека", TrackLib);///
         Scanner in = new Scanner(System.in);
         boolean exit=false;
         while (!exit) {
