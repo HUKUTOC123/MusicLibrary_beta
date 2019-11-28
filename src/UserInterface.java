@@ -121,6 +121,20 @@ public class UserInterface {
                 break;
         }
     }
+
+    private void exitMainMenu(Scanner in){
+        System.out.println("\n" +
+                "Чтобы выйти в главное меню нажмите 1");
+        String q=in.nextLine();
+        switch (q) {
+            case "1":cls();
+                break;
+            default:cls();
+                System.out.println("Неверно введенный символ");
+                break;
+        }
+    }
+
     private void setMenu(TracksLib manager){
         Scanner in = new Scanner(System.in);
         boolean exitCreateMenu=false;
@@ -177,18 +191,6 @@ public class UserInterface {
             default:cls();
                 System.out.println("Неверно введенный символ\n" +
                         "--------------------------------------------");
-                break;
-        }
-    }
-    private void exitMainMenu(Scanner in){
-        System.out.println("\n" +
-                "Чтобы выйти в главное меню нажмите 1");
-        String q=in.nextLine();
-        switch (q) {
-            case "1":cls();
-                break;
-            default:cls();
-                System.out.println("Неверно введенный символ");
                 break;
         }
     }
