@@ -53,7 +53,6 @@ public class Controller {
         return Genre_Name;
     }
 
-
     public static void serialisationTrackLib(OutputStream out, LinkedList<Track> TracksList) throws IOException {
         ObjectOutputStream objectOut = new ObjectOutputStream(out);
         objectOut.writeObject(TracksList);

@@ -152,8 +152,8 @@ public class UserInterface {
                         int num = in.nextInt();
 
                         System.out.println("\n 1.Изменить имя исполнителя\n " +
-                                           "\n 2.Изменить название трека\n " +
-                                           "\n 3.Изменить название жанра\n" );
+                                "\n 2.Изменить название трека\n " +
+                                "\n 3.Изменить название жанра\n" );
                         Scanner inn = new Scanner(System.in);
                         String str2 = inn.nextLine();
                         switch (str2){

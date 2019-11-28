@@ -38,7 +38,7 @@ public class TracksLib implements Serializable {
     public void setTrack(int index, Track tracks_list) {
         TracksList.set(index, tracks_list);
     }
-    public Track getTrack(int index){ return TracksList.get(index);}
+    public Track getTrack(int index){ return TracksList.get( index );}
     //представление чеез массив
     public Track[] getTrackLib() {
         Track[] array=new Track[TracksList.size()];
