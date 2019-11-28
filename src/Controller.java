@@ -31,6 +31,33 @@ public class Controller {
         return track;
     }
 
+    public static String inputPerformer_Name(Scanner in) {
+
+        System.out.println("Введите  новое имя исполнителя:");
+        String Performer_Name = in.nextLine();
+        //track.setPerformer_Name(Performer_Name);
+        //return track;
+        return Performer_Name;
+    }
+
+    public static String inputTrack_Name(Scanner in) {
+
+        System.out.println("Введите  новое имя исполнителя:");
+        String Track_Name = in.nextLine();
+        //track.setPerformer_Name(Performer_Name);
+        //return track;
+        return Track_Name;
+    }
+
+    public static String inputGenre_Name(Scanner in) {
+
+        System.out.println("Введите  новое имя исполнителя:");
+        String Genre_Name = in.nextLine();
+        //track.setPerformer_Name(Performer_Name);
+        //return track;
+        return Genre_Name;
+    }
+
     public static void serialisationTrackLib(OutputStream out, LinkedList<Track> TracksList) throws IOException {
         ObjectOutputStream objectOut = new ObjectOutputStream(out);
         objectOut.writeObject(TracksList);

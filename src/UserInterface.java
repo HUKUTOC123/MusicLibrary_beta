@@ -136,9 +136,31 @@ public class UserInterface {
                         System.out.println(manager);
                         System.out.println("Введите индекс трека, который хотите изменить:");
                         int num = in.nextInt();
+
+                        System.out.println("\n 1.Изменить имя исполнителя\n " +
+                                           "\n 2.Изменить название трека\n " +
+                                           "\n 3.Изменить название жанра\n" );
                         Scanner inn = new Scanner(System.in);
-                        System.out.println("\nЗаполните данные о треке по-новому :");
-                        manager.setTrack(num, Controller.inputTrack(inn));
+                        String str2 = inn.nextLine();
+                        switch (str2){
+                            case "1":
+                                Scanner in1  = new Scanner(System.in);
+
+                                Track track1 = manager.getTrack(num);
+                                track1.setPerformer_Name(Controller.inputPerformer_Name(in1));
+                                break;
+                            case "2":
+                                Scanner in2  = new Scanner(System.in);
+                                Track track2 = manager.getTrack(num);
+                                track2.setTrack_name(Controller.inputTrack_Name(in2));
+                                break;
+                            case "3":
+                                Scanner in3  = new Scanner(System.in);
+                                Track track3 = manager.getTrack(num);
+                                track3.setTrack_name(Controller.inputGenre_Name(in3));
+                                break;
+                        }
+
                         cls();
                         System.out.println("Элемент успешно изменен \n" +
                                 "------------------------------------------");
@@ -180,14 +202,17 @@ public class UserInterface {
         return TrackLib;
     }
 
-
-
     private  void cls(){
         int ln=0;
         while (ln<50) {
             System.out.println();
             ln++;
         }
+    }
+
+
+    private void RedactionMenu(){
+
     }
 }
 
