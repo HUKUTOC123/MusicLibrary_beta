@@ -4,13 +4,14 @@ import ForProject.TracksLib;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
 public class UserInterface {
     public  void mainMenu() {
-        LinkedList<Track> TrackLib =new LinkedList<Track>();
-        TrackLib = downloadTrackLib(TrackLib);
+        ArrayList<Track> TrackLib =new ArrayList<Track>();
+        //TrackLib = downloadTrackLib(TrackLib);
         TracksLib library = new TracksLib("Музыкальня библиотека", TrackLib);//
         Scanner in = new Scanner(System.in);
         boolean exit=false;
@@ -152,8 +153,8 @@ public class UserInterface {
                         int num = in.nextInt();
 
                         System.out.println("\n 1.Изменить имя исполнителя\n " +
-                                "\n 2.Изменить название трека\n " +
-                                "\n 3.Изменить название жанра\n" );
+                                           "\n 2.Изменить название трека\n " +
+                                           "\n 3.Изменить название жанра\n" );
                         Scanner inn = new Scanner(System.in);
                         String str2 = inn.nextLine();
                         switch (str2){
@@ -161,17 +162,17 @@ public class UserInterface {
                                 Scanner in1  = new Scanner(System.in);
 
                                 Track track1 = manager.getTrack(num);
-                                track1.setPerformer_Name(Controller.inputPerformer_Name(in1));
+                                track1.setPerformerName(Controller.inputPerformerName(in1));
                                 break;
                             case "2":
                                 Scanner in2  = new Scanner(System.in);
                                 Track track2 = manager.getTrack(num);
-                                track2.setTrack_name(Controller.inputTrack_Name(in2));
+                                track2.setNameTrack(Controller.inputTrackName(in2));
                                 break;
                             case "3":
                                 Scanner in3  = new Scanner(System.in);
                                 Track track3 = manager.getTrack(num);
-                                track3.setTrack_name(Controller.inputGenre_Name(in3));
+                                track3.setNameTrack(Controller.inputGenreName(in3));
                                 break;
                         }
 
@@ -195,7 +196,7 @@ public class UserInterface {
         }
     }
 
-    private LinkedList<Track> downloadTrackLib(LinkedList<Track> TrackLib) {
+    private ArrayList<Track> downloadTrackLib(ArrayList<Track> TrackLib) {
         try(FileInputStream fileInputStream=new FileInputStream("serialisation1")) {
             TrackLib =Controller.deserialisationTrackLib(fileInputStream);
         }
@@ -212,10 +213,6 @@ public class UserInterface {
         }
     }
 
-
-    private void RedactionMenu(){
-
-    }
 }
 
 

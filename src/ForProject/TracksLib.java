@@ -1,18 +1,18 @@
 package ForProject;
 
 import java.io.Serializable;
-import java.util.LinkedList;
+import java.util.ArrayList;
+
 
 public class TracksLib implements Serializable {
     private String name;
-    private LinkedList<Track> TracksList=new LinkedList<Track>();
+    private ArrayList<Track> TracksList=new ArrayList<Track>();
     public  TracksLib(String name){ this.name=name; }
 
-    public TracksLib(String name, LinkedList<Track> TracksList) {
+    public TracksLib(String name, ArrayList<Track> TracksList) {
         this.name=name;
         this.TracksList = TracksList;
     }
-    public  TracksLib(){}
     public String getName(){return name;}
     public void setName(){this.name=name;}
     public Track[] getTracks(){
@@ -23,7 +23,7 @@ public class TracksLib implements Serializable {
         return array;
     }
 
-    public LinkedList<Track> getTracksList() {
+    public ArrayList<Track> getTracksList() {
         return TracksList;
     }
     //создание

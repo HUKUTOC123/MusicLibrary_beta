@@ -1,11 +1,10 @@
 package ForProject;
 
 public class Recordlen {
-    int hour;
+
     int minute;
     int second;
-    public Recordlen(int hour, int minute, int second){
-        this.hour=hour;
+    public Recordlen( int minute, int second){
         this.minute=minute;
         this.second=second;
 
