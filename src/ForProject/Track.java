@@ -26,7 +26,7 @@ public  void setNameGenre(String Genre_Name){this.nameGenre =Genre_Name;}
 public Recordlen getRecordLength(){return recordLength;}
 public  void setRecordLength(Recordlen Record_length){this.recordLength =Record_length;}
 public String getTitleAlbum(){return titleAlbum;}
-public void setAlbum_title(){this.titleAlbum = titleAlbum;}
+public void setAlbumTitle(String Aulbom_Title){this.titleAlbum = Aulbom_Title;}
 public String getPerformerName(){return performerName;}
 public void setPerformerName(String Performer_Name){this.performerName =Performer_Name;}
 

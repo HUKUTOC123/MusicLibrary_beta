@@ -1,10 +1,15 @@
+import ForProject.Track;
+import ForProject.TracksLib;
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Controller2 {
 
     public static void Process() throws IOException {
-        boolean cercle = true;
+        Model obj = new Model();
+        boolean cercle  = true;
         boolean cercle1 = true;
         boolean cercle2 = true;
         boolean cercle3 = true;
@@ -13,32 +18,32 @@ public class Controller2 {
         while(cercle){
             while (cercle1){
                 View.printMenu1();
-                Scanner in = new Scanner(System.in);//Как лучше? как здесь или в cercle2?
-                switch (in.nextLine())
+                int key = System.in.read();
+                switch (key)
                 {
-                    case "1"://Просмотр
+                    case 49://Просмотр
 
                         cercle1 = false;
                         cercle2 = true;
 
                         break;
-                    case "2": //Открытие на чтение и запись
+                    case 50: //Открытие на чтение и запись
                         cercle1 = false;
                         cercle3 = true;
-                    case "3": //Cохранение файла
+                    case 51: //Cохранение файла
 
                         break;
-                    case "4":// Удаление файла
+                    case 52:// Удаление файла
 
                         break;
-                    /*case 27 ://ESC
+                    case 27 ://ESC
 
                         cercle = false;
                         cercle1 = false;
                         cercle2 = false;
                         cercle3 = false;
                         cercle4 = false;
-                        break;*/
+                        break;
                 }
             }
             while (cercle2){
@@ -66,6 +71,7 @@ public class Controller2 {
                 switch (key)
                 {
                     case 49://Добавление
+                        obj.addNewTrack();
                         cercle1 = false;
                         cercle3 = false;
 
@@ -92,44 +98,62 @@ public class Controller2 {
 
             }
             while(cercle4) {
+                Scanner in = new Scanner(System.in);
+                View.printNumberTrackEditing();
+                int num = in.nextInt();
+
                 View.printMenuEditing();
                 int key = System.in.read();
 
                 switch (key) {
                     case 49://Редактирование имени
+                        obj.changePerformerName(num);
                         cercle1 = false;
                         cercle3 = false;
 
                         break;
                     case 50: //Редактирование названия трека
+                        obj.changeTrackName(num);
                         cercle1 = false;
+                        cercle2 = false;
                         cercle3 = false;
+                        cercle4 = false;
+
+                        break;
                     case 51: //Редактирование названия жанра
+                        obj.changeGenreName(num);
                         cercle1 = false;
+                        cercle2 = false;
                         cercle3 = false;
-                        cercle4 = true;
+                        cercle4 = false;
 
                         break;
                     case 52: //Редактирование названия альбома
+                        obj.changeAulbomName(num);
+                        cercle  = true;
                         cercle1 = false;
+                        cercle2 = false;
                         cercle3 = false;
                         cercle4 = false;
 
                         break;
                     case 53: //Редактирование длительности
+
+                        cercle  = true;
                         cercle1 = false;
+                        cercle2 = false;
                         cercle3 = false;
-                        cercle4 = true;
+                        cercle4 = false;
 
                         break;
 
 
                     case 27://ESC
 
-                        cercle = true;
+                        cercle  = true;
                         cercle1 = true;
-
-                        cercle3 = true;
+                        cercle2 = false;
+                        cercle3 = false;
                         cercle4 = false;
                         break;
                 }

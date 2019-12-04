@@ -35,6 +35,10 @@ public class View {
 
     }
 
+    public static void printNumberTrackEditing (){
+        System.out.println(" Введите номер трека:  ");
+    }
+
     public static void printMenuEditing (){
         System.out.println(" [1] Имя исполнителя \n " +
                 " [2] Название трека \n " +
