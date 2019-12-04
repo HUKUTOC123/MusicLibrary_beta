@@ -87,4 +87,17 @@ public class Model {
         Track track1 = library.getTrack(numTrack);
         track1.setAlbumTitle(inputAulbomTitle(in1));
     }
+
+    public static int numberDeleteTrack(Scanner in){
+        System.out.println("Введите  новое название альбома:");
+        int number = in.nextInt();
+        return number;
+    }
+
+    public void deleteTrack (){
+        Scanner in  = new Scanner(System.in);
+        int number = numberDeleteTrack(in);
+        library.deleteTrack(number);
+    }
+
 }

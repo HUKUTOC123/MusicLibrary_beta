@@ -77,6 +77,7 @@ public class Controller2 {
 
                         break;
                     case 50: //Удаление
+                        obj.deleteTrack();
                         cercle1 = false;
                         cercle3 = false;
 
