@@ -62,6 +62,7 @@ public class Model {
     public void addNewTrack (){
         Scanner in = new Scanner(System.in);
         library.createTrack(inputTrack(in));
+        System.out.println("-----Трек успешно добавлен-----");
     }
 
     public void changePerformerName( int numTrack ){
@@ -98,6 +99,7 @@ public class Model {
         Scanner in  = new Scanner(System.in);
         int number = numberDeleteTrack(in);
         library.deleteTrack(number);
+        System.out.println("-----Трек был удален-----");
     }
 
 }

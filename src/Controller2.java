@@ -1,14 +1,10 @@
-import ForProject.Track;
-import ForProject.TracksLib;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Controller2 {
 
     public static void Process() throws IOException {
-        Model obj = new Model();
+
         boolean cercle  = true;
         boolean cercle1 = true;
         boolean cercle2 = true;
@@ -25,11 +21,15 @@ public class Controller2 {
 
                         cercle1 = false;
                         cercle2 = true;
-
+                        cercle3 = false;
+                        cercle4 = false;
+                        cercle5 = false;
                         break;
                     case 50: //Открытие на чтение и запись
                         cercle1 = false;
                         cercle3 = true;
+                        cercle4 = false;
+                        cercle5 = false;
                     case 51: //Cохранение файла
 
                         break;
@@ -44,6 +44,7 @@ public class Controller2 {
                         cercle3 = false;
                         cercle4 = false;
                         break;
+                        default: View.printAlert();
                 }
             }
             while (cercle2){
@@ -61,6 +62,7 @@ public class Controller2 {
                         cercle2 = false;
                         cercle1 = true;
                         break;
+                    default: View.printAlert();
                 }
 
             }
@@ -71,13 +73,14 @@ public class Controller2 {
                 switch (key)
                 {
                     case 49://Добавление
-                        obj.addNewTrack();
+                        Singleton.getInstance().addNewTrack();
+
                         cercle1 = false;
                         cercle3 = false;
 
                         break;
                     case 50: //Удаление
-                        obj.deleteTrack();
+                        Singleton.getInstance().deleteTrack();
                         cercle1 = false;
                         cercle3 = false;
 
@@ -95,6 +98,7 @@ public class Controller2 {
                         cercle1 = true;
                         cercle3 = false;
                         break;
+                    default: View.printAlert();
                 }
 
             }
@@ -108,13 +112,13 @@ public class Controller2 {
 
                 switch (key) {
                     case 49://Редактирование имени
-                        obj.changePerformerName(num);
+                        Singleton.getInstance().changePerformerName(num);
                         cercle1 = false;
                         cercle3 = false;
 
                         break;
                     case 50: //Редактирование названия трека
-                        obj.changeTrackName(num);
+                        Singleton.getInstance().changeTrackName(num);
                         cercle1 = false;
                         cercle2 = false;
                         cercle3 = false;
@@ -122,7 +126,7 @@ public class Controller2 {
 
                         break;
                     case 51: //Редактирование названия жанра
-                        obj.changeGenreName(num);
+                        Singleton.getInstance().changeGenreName(num);
                         cercle1 = false;
                         cercle2 = false;
                         cercle3 = false;
@@ -130,7 +134,7 @@ public class Controller2 {
 
                         break;
                     case 52: //Редактирование названия альбома
-                        obj.changeAulbomName(num);
+                        Singleton.getInstance().changeAulbomName(num);
                         cercle  = true;
                         cercle1 = false;
                         cercle2 = false;
@@ -157,6 +161,7 @@ public class Controller2 {
                         cercle3 = false;
                         cercle4 = false;
                         break;
+                    default: View.printAlert();
                 }
             }
             while (cercle5){
@@ -171,15 +176,21 @@ public class Controller2 {
                         cercle5 = false;
                         break;
                     case 51: //сортировка треков по длительности
-                        cercle1 = false;
-                        cercle2 = false;
                         cercle5 = false;
+                        cercle1 = true;
+                        cercle2 = false;
+                        cercle3 = false;
+                        cercle4 = false;
+
                         break;
                     case 27://ESC
                         cercle5 = false;
                         cercle2 = true;
-                        cercle1 = true;
+                        cercle1 = false;
+                        cercle3 = false;
+                        cercle4 = false;
                         break;
+                    default: View.printAlert();
                 }
 
             }

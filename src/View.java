@@ -39,6 +39,10 @@ public class View {
         System.out.println(" Введите номер трека:  ");
     }
 
+    public static void printAlert (){
+        System.out.println("-----Неверный ввод-----");
+    }
+
     public static void printMenuEditing (){
         System.out.println(" [1] Имя исполнителя \n " +
                 " [2] Название трека \n " +
